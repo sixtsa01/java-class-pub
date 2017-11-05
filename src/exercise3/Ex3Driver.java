@@ -1,6 +1,13 @@
 package exercise3;
+// Sam Sixta
 
 import java.io.File;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.OutputStream;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -8,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
  *
- * @author yasiro01
+ * @author sixtsa01
  */
 public class Ex3Driver {
   public static final String PATH = "data/";
@@ -16,7 +23,7 @@ public class Ex3Driver {
    * main application function
    * @param args 
    */
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     int[][] matrix1 = null;
     int[][] matrix2 = null;
     int[][] result = null;
@@ -63,7 +70,15 @@ public class Ex3Driver {
    * @throws java.io.FileNotFoundException 
    */
   public static void writeMatrix(int[][] matrix, String filename) throws FileNotFoundException {
-    throw new UnsupportedOperationException();
+      PrintWriter outputFile = new PrintWriter(filename);
+      for (int[] row: matrix) {
+          for (int item: row) {
+              outputFile.printf("%5d", item);
+          }
+          outputFile.println("");
+      }
+      outputFile.close();
+//          throw new UnsupportedOperationException();
   }
   /**
    * Read a matrix from a file
@@ -71,8 +86,28 @@ public class Ex3Driver {
    * @return matrix read from a file
    * @throws java.io.FileNotFoundException
    */
-  public static int[][] readFile(String filename) throws FileNotFoundException {
-    throw new UnsupportedOperationException();
+  public static int[][] readFile(String filename) throws FileNotFoundException, IOException {
+      BufferedReader inputFile = new BufferedReader(new FileReader(filename));
+      String line = inputFile.readLine();
+      String[] lineSplit = line.split(" ");
+      int rows = Integer.valueOf(lineSplit[0]);
+      int columns = Integer.valueOf(lineSplit[1]);
+      int[][] matrix = new int[rows][columns];
+      int lineCount = 0;
+      while ((line = inputFile.readLine()) != null) {
+          Scanner lineContent = new Scanner(line);
+          while (lineContent.hasNext()) {
+              lineContent.next();
+              String[] splitLine = line.split(" ");
+              for (int i = 0; i < splitLine.length; i++) {
+                  matrix[lineCount][i] = Integer.valueOf(splitLine[i]);
+              }
+          }
+      lineCount++;
+      }
+      return matrix;
+  }
+//    throw new UnsupportedOperationException();
     /*
     10. Open the input file and create a Scanner object to read its content
     20. Read two values (rows and columns) from the first line, if possible
@@ -81,7 +116,6 @@ public class Ex3Driver {
     50. Split each line into individual tokens and put them into your array
     60. Return the array
     */
-  }
   /**
    * Multiply two matrices
    * @param matrix1
@@ -89,6 +123,18 @@ public class Ex3Driver {
    * @return the resulting matrix
    */
   public static int[][] multiply(int[][] matrix1, int[][] matrix2) {
-    throw new UnsupportedOperationException();
+      int mat1 = matrix1.length;
+      int mat1b = matrix1[0].length;
+      int mat2 = matrix2.length;
+      int mat2b = matrix2[0].length;
+      int[][] matrix3 = new int[mat1][mat2b];
+      for (int i = 0; i < mat1; i++) {
+          for (int j= 0; j < mat2b; j++) {
+              for (int k = 0; k < mat1b; k++){
+                  matrix3[i][j] += matrix1[i][j] * matrix2[i][j];
+              }
+          }
+      }
+      return matrix3;
   }
 }
