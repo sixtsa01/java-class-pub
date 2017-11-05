@@ -1,5 +1,6 @@
 package exercise3;
 // Sam Sixta
+// exercise3
 
 import java.io.File;
 import java.io.BufferedOutputStream;
