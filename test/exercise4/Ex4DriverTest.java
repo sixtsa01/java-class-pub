@@ -62,13 +62,15 @@ public class Ex4DriverTest {
     @Test
     public void testTask2() {
         System.out.println("task2");
-        String text = "";
+        String text = "hello";
         Ex4Driver instance = new Ex4Driver();
-        Integer expResult = null;
+        Integer expResult = 5;
         Integer result = instance.task2(text);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        text = "Samantha";
+        expResult = 8;
+        result = instance.task2(text);
+        assertEquals(expResult, result);
     }
 
     /**
@@ -77,13 +79,15 @@ public class Ex4DriverTest {
     @Test
     public void testTask3() {
         System.out.println("task3");
-        Character letter = null;
+        Character letter = 'A';
         Ex4Driver instance = new Ex4Driver();
-        Integer expResult = null;
+        Integer expResult = 65;
         Integer result = instance.task3(letter);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        letter = 'B';
+        expResult = 66;
+        result = instance.task3(letter);
+        assertEquals(expResult, result);
     }
 
     /**
@@ -92,13 +96,15 @@ public class Ex4DriverTest {
     @Test
     public void testTask4() {
         System.out.println("task4");
-        String text = "";
+        String text = "hello";
         Ex4Driver instance = new Ex4Driver();
-        Character expResult = null;
+        Character expResult = 'h';
         Character result = instance.task4(text);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        text = "Samantha";
+        expResult = 'S';
+        result = instance.task4(text);
+        assertEquals(expResult, result);
     }
 
     /**
@@ -107,14 +113,17 @@ public class Ex4DriverTest {
     @Test
     public void testTask5() {
         System.out.println("task5");
-        Integer n = null;
-        Integer m = null;
+        Integer n = 5;
+        Integer m = 6;
         Ex4Driver instance = new Ex4Driver();
-        Integer expResult = null;
+        Integer expResult = 30;
         Integer result = instance.task5(n, m);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        n = 8;
+        m = 6;
+        expResult = 48;
+        result = instance.task5(n, m);
+        assertEquals(expResult, result);
     }
 
     /**
@@ -123,14 +132,17 @@ public class Ex4DriverTest {
     @Test
     public void testTask6() {
         System.out.println("task6");
-        String text = "";
-        Integer n = null;
+        String text = "hello";
+        Integer n = 3;
         Ex4Driver instance = new Ex4Driver();
-        Character expResult = null;
+        Character expResult = 'l';
         Character result = instance.task6(text, n);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        text = "hello";
+        n = 4;
+        expResult = 'o';
+        result = instance.task6(text, n);
+        assertEquals(expResult, result);
     }
 
     /**
@@ -139,13 +151,14 @@ public class Ex4DriverTest {
     @Test
     public void testTask7() {
         System.out.println("task7");
-        Integer[] intArr = null;
+        Integer[] intArr = {1,2,3,4,5};
         Ex4Driver instance = new Ex4Driver();
-        Integer expResult = null;
+        Integer expResult = 5;
         Integer result = instance.task7(intArr);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        expResult = 5;
+        result = instance.task7(intArr);
+        assertEquals(expResult, result);
     }
 
     /**
@@ -154,14 +167,16 @@ public class Ex4DriverTest {
     @Test
     public void testTask8() {
         System.out.println("task8");
-        Integer[] intArr = null;
-        Integer n = null;
+        Integer[] intArr = {1,2,3,4,5};
+        Integer n = 6;
         Ex4Driver instance = new Ex4Driver();
-        Boolean expResult = null;
+        Boolean expResult = false;
         Boolean result = instance.task8(intArr, n);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        n = 3;
+        expResult = true;
+        result = instance.task8(intArr, n);
+        assertEquals(expResult, result);
     }
 
     /**
@@ -170,13 +185,11 @@ public class Ex4DriverTest {
     @Test
     public void testTask9() {
         System.out.println("task9");
-        ArrayList<String> arrList = null;
+        ArrayList<String> arrList = new ArrayList<String>();
         Ex4Driver instance = new Ex4Driver();
-        Integer expResult = null;
+        Integer expResult = 0;
         Integer result = instance.task9(arrList);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -185,13 +198,13 @@ public class Ex4DriverTest {
     @Test
     public void testTask10() {
         System.out.println("task10");
-        HashMap<Integer, Integer> hash = null;
+        HashMap<Integer, Integer> hash = new HashMap<Integer, Integer>();
+        HashMap newmap = new HashMap();
+        newmap.put(5,4);
         Ex4Driver instance = new Ex4Driver();
-        Integer expResult = null;
+        Integer expResult = 0;
         Integer result = instance.task10(hash);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
 }
