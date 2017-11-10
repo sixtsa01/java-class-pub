@@ -1,5 +1,5 @@
 package exercise5;
-
+// Sam Sixta
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
