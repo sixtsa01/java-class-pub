@@ -1,5 +1,5 @@
 package exercise6;
-
+// Sam Sixta
 /**
  * Exercise 6
  * @author yasiro01
