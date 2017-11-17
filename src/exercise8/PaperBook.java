@@ -8,21 +8,27 @@ package exercise8;
 public class PaperBook extends Book {
   private final int pages;
   private String location;
+  
+  public PaperBook(int pages, String location, String author, int publishingYear, long id, String title, int quantity) {
+      super(author, publishingYear, id, title, quantity);
+      this.pages = pages;
+      this.location = location;
+  }
 
   /**
    * Get the number of pages
    * @return the value of pages
    */
-  public int getPages() {
-    return pages;
-  }
+    public int getPages() {
+        return pages;
+    }
   
   /**
    * Get the value of location
    * @return the value of location
    */
-  public String getLocation() {
-    return location;
+    public String getLocation() {
+        return location;
   }
 
   /**
@@ -37,8 +43,15 @@ public class PaperBook extends Book {
    * Move an item to a new location
    * @param newLocation 
    */
+  // Didn't have to do much for this one
   public void move(String newLocation) {
-    throw new UnsupportedOperationException();
+      this.location = newLocation;
   }
   
+  @Override
+  public String getInfo() {
+      return String.format("%s (%d). %s is located at %s", author, publishingYear, title, location);
+  }
+  // In the string getInfo, %s means the letters, %d the numbers and author is
+  // explaining for the first %s
 }

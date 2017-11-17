@@ -1,5 +1,5 @@
 package exercise8;
-
+// Sam Sixta
 import java.io.IOException;
 import java.util.Random;
 import java.util.logging.Level;
