@@ -1,5 +1,9 @@
 package exercise11;
 
+// Sam Sixta
+// Exercise 11
+// I had troubles on getting task 3 to run but everything else were running
+
 import java.io.ByteArrayOutputStream;
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
