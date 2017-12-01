@@ -1,5 +1,8 @@
 package exercise10;
 
+// Sam Sixta
+//Exercise 10
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
